@@ -17,6 +17,11 @@ NEW_BRANCH=$(echo "$SOURCE_REPO" | awk -F "/" '{print $NF,$(NF-1)}' | sed 's/ /-
 git clone "$SOURCE_REPO" source_repo
 cd source_repo
 
+# Adding the source.md
+echo -e "### Original repo : \n$SOURCE_REPO" > source.md
+git add source.md
+git commit -m "Adding source"
+
 # Create a new branch
 git checkout -b "$NEW_BRANCH"
 
