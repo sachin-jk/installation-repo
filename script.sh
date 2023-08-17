@@ -11,7 +11,7 @@ SOURCE_REPO="$1"
 DEST_REPO="https://github.com/aravind-etagi/installation-repo.git"
 
 # Set the new branch name
-NEW_BRANCH=$(echo "$SOURCE_REPO" | awk -F "/" '{print $NF}' | cut -d "." -f1)
+NEW_BRANCH=$(echo "$SOURCE_REPO" | awk -F "/" '{print $NF,$(NF-1)}' | sed 's/ /--/' | sed 's/.git//')
 
 # Clone the source repository
 git clone "$SOURCE_REPO" source_repo
