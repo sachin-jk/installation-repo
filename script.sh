@@ -8,7 +8,7 @@ fi
 
 # Set your source and destination repository URLs
 SOURCE_REPO="$1"
-DEST_REPO="https://github.com/aravind-etagi/installation-repo.git"
+DEST_REPO="https://github.com/sachin-jk/installation-repo.git"
 
 # Set the new branch name
 NEW_BRANCH=$(echo "$SOURCE_REPO" | awk -F "/" '{print $NF,$(NF-1)}' | sed 's/ /--/' | sed 's/.git//')
